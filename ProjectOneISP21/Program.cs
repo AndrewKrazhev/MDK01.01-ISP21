@@ -1,8 +1,9 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using ProjectOneISP21;
+using System.Security.Cryptography.X509Certificates;
 
 internal class Program
 {
-
+    /*
     static void SceneIntro(int res )
     {
         string userChoose = "0";
@@ -27,12 +28,7 @@ internal class Program
         userChoose = Console.ReadLine();
         Console.WriteLine(userChoose[0]);
         ch = (int)Char.GetNumericValue(userChoose[0]);
-        /*
-        if ( ch <= 4)
-        {
-            return (int)Char.GetNumericValue(userChoose[0]);
-        }
-        else { Scene0(); return 0; }*/
+
 
         switch (ch) 
         {
@@ -70,12 +66,7 @@ internal class Program
         userChoose = Console.ReadLine();
         Console.WriteLine(userChoose[0]);
         ch = (int)Char.GetNumericValue(userChoose[0]);
-        /*
-        if ( ch <= 4)
-        {
-            return (int)Char.GetNumericValue(userChoose[0]);
-        }
-        else { Scene0(); return 0; }*/
+
 
         switch (ch)
         {
@@ -101,67 +92,18 @@ internal class Program
                 break;
         }
     }
+    */
     private static void Main(string[] args)
     {
-        int choose = 0;
-                //сцена 1.
-        /*
-        Console.WriteLine("==========================");
-        Console.WriteLine("|| Подошёл к техникуму  ||");
-        Console.WriteLine("==========================");
-        Console.WriteLine("Ваши действия: \n1.Пошёл на пары \n2.Пошёл домой\n3.Попал в аварию\n4.Пошёл за шавухой");
-        Console.Write(">");
-        userChoose = Console.ReadLine();
-        Console.WriteLine(userChoose[0]);
-        int intVal = (int)Char.GetNumericValue(userChoose[0]);
-        */
-        /*
-        if (intVal == 1) { Console.WriteLine("Вы выбрали 1"); }
-        if (intVal == 2) { Console.WriteLine("Вы выбрали 2"); }
-        if (intVal == 3) { Console.WriteLine("Вы выбрали 3"); }
-        if (intVal == 4) { Console.WriteLine("Вы выбрали 4"); }
-        if (intVal == 0) { Console.WriteLine("Вы ничего не выбрали, повторите выбор"); }
-        */
-        
-        while (choose != 777) {
-        switch (choose)
-        {
-                case 0:
-                    choose = Scene0();
-                    break;
+        Scenes scene0 = new Scenes(0, "fdfdf");
+        /*scene0.Name = "Сцена ноль";
+        scene0.Number = 1;*/
+        scene0.Show();
 
-                case 20:
-                choose = Scene20();
-                break;
-         case 42:
-           // choose = Scene42();
-            break;
-            default:
-            break;
-        }
-        }
-        /*
-        switch (Scene0()) {
-            case 1:
-                Console.WriteLine("Вы выбрали 1");
-                Console.WriteLine("Пришли на пару");
-                break;
-            case 2:
-                Console.WriteLine("Вы выбрали 2");
-                Console.WriteLine("Пришли на пару");
-                break;
-            case 3:
-                Console.WriteLine("Вы выбрали 3");
-                Console.WriteLine("Пришли на пару");
-                break;
-            default:
-                Console.WriteLine("Такого значения нет, повторите ввод");
-                SceneIntro(choose);
-                break;
-        }
-        */
-
-
+        FightScenes KillTheBill = new FightScenes();
+        KillTheBill.Name = "Bill";
+        KillTheBill.Number = 1;
+        KillTheBill.Show();
 
     }
 }
